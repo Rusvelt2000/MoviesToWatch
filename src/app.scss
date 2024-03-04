@@ -19,12 +19,11 @@ body {
 }
 
 .appContainer {
-  display: flex;
-  justify-content: center;
-  padding: 32px 64px 48px;
-  background: $bg-alt;
+  background-color: $bg-color;
 
   .searchContainer {
+    padding: 16px 64px 48px;
+    background: $bg-alt;
     width: 100%;
     max-width: 1200px;
   }
@@ -42,6 +41,40 @@ body {
     &:focus {
       border: 1px solid $accent;
       outline: 1px solid $accent;
+    }
+  }
+}
+
+.listOfMovies {
+  padding: 32px 64px 48px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $accent-dark;
+  gap: 32px;
+  max-width: 1200px;
+}
+
+.movieShow {
+  background: $bg-alt;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 300px;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 444px;
+    overflow: hidden;
+  }
+  .caption {
+    padding: 0 16px 8px;
+    small {
+      font-weight: 600;
+    }
+    h3 {
+      margin-top: 8px;
+    }
+    p {
+      margin-top: 2px;
     }
   }
 }

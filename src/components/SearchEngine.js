@@ -7,6 +7,7 @@ function SearchEngine({ onSubmitMovie }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     onSubmitMovie(movieTitle);
+    setMovieTitle("");
   };
 
   const handleChange = (event) => {

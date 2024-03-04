@@ -26,6 +26,7 @@ function App() {
         <h1>My Watch List</h1>
         <SearchEngine onSubmitMovie={handleSearchMovie} />
       </div>
+      <ListOfMovies movies={movies} />
     </div>
   );
 }
