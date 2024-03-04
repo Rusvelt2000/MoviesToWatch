@@ -1,0 +1,47 @@
+$text-color: #4d4d4d;
+$main-dark: hsl(0, 100, 24);
+$main: hsl(356, 83, 41);
+$ternary: hsl(40, 91, 91);
+$bg-color: hsl(0, 0, 98);
+$bg-alt: hsl(0, 11%, 93%);
+$accent-dark: hsl(201, 100, 14);
+$accent: hsl(203, 39, 57);
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  font-family: "poppins", Calibri, sans-serif;
+  color: $text-color;
+}
+
+.appContainer {
+  display: flex;
+  justify-content: center;
+  padding: 32px 64px 48px;
+  background: $bg-alt;
+
+  .searchContainer {
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  h1 {
+    color: $main;
+  }
+
+  input {
+    width: 100%;
+    border-radius: 4px;
+    padding: 8px;
+    outline: 1px solid transparent;
+    border: 1px solid transparent;
+    &:focus {
+      border: 1px solid $accent;
+      outline: 1px solid $accent;
+    }
+  }
+}
