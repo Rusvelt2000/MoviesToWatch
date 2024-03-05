@@ -22,11 +22,17 @@ function App() {
 
   return (
     <div className="appContainer">
-      <div className="searchContainer">
-        <h1>My Watch List</h1>
-        <SearchEngine onSubmitMovie={handleSearchMovie} />
-      </div>
-      <ListOfMovies movies={movies} />
+      <section className="search">
+        <div className="searchContainer">
+          <h1>My Watch List</h1>
+          <SearchEngine onSubmitMovie={handleSearchMovie} />
+        </div>
+      </section>
+      <section className="listOfMoviesContainer">
+        <div>
+          <ListOfMovies movies={movies} />
+        </div>
+      </section>
     </div>
   );
 }

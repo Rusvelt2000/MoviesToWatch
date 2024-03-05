@@ -1,11 +1,11 @@
 $text-color: #4d4d4d;
-$main-dark: hsl(0, 100, 24);
-$main: hsl(356, 83, 41);
-$ternary: hsl(40, 91, 91);
+$main-dark: #7a0000;
+$main: #bf121d;
+$ternary: #fdefd3;
 $bg-color: hsl(0, 0, 98);
 $bg-alt: hsl(0, 11%, 93%);
-$accent-dark: hsl(201, 100, 14);
-$accent: hsl(203, 39, 57);
+$accent-dark: #002e47;
+$accent: #679bbc;
 
 html,
 body {
@@ -18,13 +18,19 @@ body {
   color: $text-color;
 }
 
+section {
+  padding: 16px 64px 48px;
+}
+
 .appContainer {
   background-color: $bg-color;
 
-  .searchContainer {
-    padding: 16px 64px 48px;
+  .search {
     background: $bg-alt;
-    width: 100%;
+  }
+
+  .searchContainer {
+    margin: 0 auto;
     max-width: 1200px;
   }
 
@@ -45,40 +51,58 @@ body {
   }
 }
 
+.listOfMoviesContainer {
+  background-color: $accent-dark;
+}
 .listOfMovies {
   padding: 32px 64px 48px;
   display: flex;
   flex-wrap: wrap;
-  background-color: $accent-dark;
+
   gap: 32px;
   max-width: 1200px;
 }
 
 .movieShow {
   background: $bg-alt;
+
   border-radius: 8px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width: 300px;
-  overflow: hidden;
+  width: 180px;
+  height: fit-content;
+  transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
   img {
     width: 100%;
-    height: 444px;
     overflow: hidden;
   }
   .caption {
-    padding: 0 16px 8px;
+    padding: 0 12px 8px;
+    position: relative;
     small {
-      font-weight: 600;
+      font-weight: 700;
+      color: $accent-dark;
     }
     h3 {
-      margin-top: 8px;
+      margin: 8px 0 4px;
+      font-size: 18px;
     }
     p {
-      margin: 4px auto;
+      margin: 0px auto 8px;
+      font-size: 14px;
       &.rating {
-        color: $main;
-        font-size: 32px;
+        position: absolute;
+        top: -42px;
+        right: -26px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 2.2;
+        background-color: $bg-color;
+        // color: $main;
+        font-size: 26px;
         font-weight: 700;
+        box-shadow: -2px 2px 8px -4px rgba(53, 54, 54, 0.2);
       }
     }
   }

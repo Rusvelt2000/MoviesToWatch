@@ -8,8 +8,16 @@ function MovieShow({ title, year, rating, poster }) {
         <h3>{title}</h3>
         <small>Release year:</small>
         <p className="year">{year}</p>
-        <small>Rating:</small>
-        <p className="rating">{rating}</p>
+        <p
+          className="rating"
+          style={
+            rating >= 7
+              ? { color: "#fdefd3", backgroundColor: "#bf121d" }
+              : { color: "#679bbc" }
+          }
+        >
+          {rating}
+        </p>
       </div>
     </div>
   );
