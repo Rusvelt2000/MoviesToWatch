@@ -23,13 +23,13 @@ function App() {
   return (
     <div className="appContainer">
       <section className="search">
-        <div className="searchContainer">
+        <div className="searchContainer container">
           <h1>My Watch List</h1>
           <SearchEngine onSubmitMovie={handleSearchMovie} />
         </div>
       </section>
-      <section className="listOfMoviesContainer">
-        <div>
+      <section className="listOfMoviesContainer ">
+        <div className="container">
           <ListOfMovies movies={movies} />
         </div>
       </section>

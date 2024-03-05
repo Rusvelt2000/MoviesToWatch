@@ -22,16 +22,16 @@ section {
   padding: 16px 64px 48px;
 }
 
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
 .appContainer {
   background-color: $bg-color;
 
   .search {
     background: $bg-alt;
-  }
-
-  .searchContainer {
-    margin: 0 auto;
-    max-width: 1200px;
   }
 
   h1 {
@@ -55,17 +55,14 @@ section {
   background-color: $accent-dark;
 }
 .listOfMovies {
-  padding: 32px 64px 48px;
+  padding: 32px 0 48px;
   display: flex;
   flex-wrap: wrap;
-
-  gap: 32px;
-  max-width: 1200px;
+  gap: 64px;
 }
 
 .movieShow {
   background: $bg-alt;
-
   border-radius: 8px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   width: 180px;
@@ -98,8 +95,7 @@ section {
         border-radius: 50%;
         text-align: center;
         line-height: 2.2;
-        background-color: $bg-color;
-        // color: $main;
+        color: $text-color;
         font-size: 26px;
         font-weight: 700;
         box-shadow: -2px 2px 8px -4px rgba(53, 54, 54, 0.2);

@@ -13,7 +13,7 @@ function MovieShow({ title, year, rating, poster }) {
           style={
             rating >= 7
               ? { color: "#fdefd3", backgroundColor: "#bf121d" }
-              : { color: "#679bbc" }
+              : { color: "#679bbc", backgroundColor: "#fafafa" }
           }
         >
           {rating}
