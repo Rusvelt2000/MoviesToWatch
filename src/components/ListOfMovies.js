@@ -7,8 +7,10 @@ function ListOfMovies({ movies }) {
         key={Math.floor(Math.random() * 9) + movie.imdbID}
         title={movie.Title}
         year={movie.Year}
-        rating={movie.imdbRating}
+        ratings={movie.Ratings}
         poster={movie.Poster}
+        genre={movie.Genre}
+        duration={movie.Runtime}
       />
     );
   });

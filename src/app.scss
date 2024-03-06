@@ -2,7 +2,7 @@ $text-color: #4d4d4d;
 $main-dark: #7a0000;
 $main: #bf121d;
 $ternary: #fdefd3;
-$bg-color: hsl(0, 0, 98);
+$bg-color: #fafafa;
 $bg-alt: hsl(0, 11%, 93%);
 $accent-dark: #002e47;
 $accent: #679bbc;
@@ -65,9 +65,17 @@ section {
   background: $bg-alt;
   border-radius: 8px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width: 180px;
+  width: 248px;
   height: fit-content;
   transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  .info-flex {
+    display: flex;
+    gap: 32px;
+    img {
+      margin-top: 8px;
+      max-width: 24px;
+    }
+  }
   img {
     width: 100%;
     overflow: hidden;
@@ -81,11 +89,12 @@ section {
     }
     h3 {
       margin: 8px 0 4px;
-      font-size: 18px;
+      font-size: 20px;
     }
     p {
       margin: 0px auto 8px;
       font-size: 14px;
+      font-weight: 500;
       &.rating {
         position: absolute;
         top: -42px;
