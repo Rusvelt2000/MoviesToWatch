@@ -17,7 +17,7 @@ function App() {
       }
     );
 
-    setMovies([...movies, response.data]);
+    setMovies([response.data, ...movies]);
   };
 
   return (

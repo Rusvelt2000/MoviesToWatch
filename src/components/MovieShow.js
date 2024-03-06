@@ -45,15 +45,15 @@ function MovieShow({ title, year, ratings, poster, genre, duration }) {
           </div>
         </div>
         <div className="info-flex">
-          <div>
+          <div style={ratingSitesCount[0] == null ? { display: "none" } : {}}>
             <img src={imdbImg} alt="IMDB" />
             <p>{ratingSitesCount[0]}%</p>
           </div>
-          <div>
+          <div style={ratingSitesCount[1] == null ? { display: "none" } : {}}>
             <img src={rottenImg} alt="Rotten Tomatoes" />
             <p>{ratingSitesCount[1]}%</p>
           </div>
-          <div>
+          <div style={ratingSitesCount[2] == null ? { display: "none" } : {}}>
             <img src={metaImg} alt="Metacritics" />
             <p>{ratingSitesCount[2]}%</p>
           </div>
@@ -62,9 +62,11 @@ function MovieShow({ title, year, ratings, poster, genre, duration }) {
         <p
           className="rating"
           style={
-            avgRating >= 70
-              ? { color: "#fdefd3", backgroundColor: "#bf121d" }
-              : { color: "#679bbc", backgroundColor: "#fafafa" }
+            avgRating <= 55
+              ? { backgroundColor: "#bf121d" }
+              : avgRating > 55 && avgRating < 75
+              ? { backgroundColor: "#f0ba26" }
+              : { backgroundColor: "#3fdd1e" }
           }
         >
           {avgRating}

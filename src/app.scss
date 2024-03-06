@@ -65,7 +65,7 @@ section {
   background: $bg-alt;
   border-radius: 8px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width: 248px;
+  width: 252px;
   height: fit-content;
   transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
   .info-flex {
@@ -104,7 +104,7 @@ section {
         border-radius: 50%;
         text-align: center;
         line-height: 2.2;
-        color: $text-color;
+        color: $bg-color;
         font-size: 26px;
         font-weight: 700;
         box-shadow: -2px 2px 8px -4px rgba(53, 54, 54, 0.2);
