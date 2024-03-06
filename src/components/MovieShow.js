@@ -18,6 +18,7 @@ function MovieShow({ title, year, ratings, poster, genre, duration }) {
         return "-";
       }
     }
+    return "-";
   });
 
   let avgRating = 0;
@@ -27,7 +28,7 @@ function MovieShow({ title, year, ratings, poster, genre, duration }) {
 
   return (
     <div className="movieShow">
-      <img src={poster != "N/A" ? poster : defaultPoster} alt={title} />
+      <img src={poster !== "N/A" ? poster : defaultPoster} alt={title} />
       <div className="caption">
         <h3>{title}</h3>
         <div>

@@ -16,8 +16,11 @@ function App() {
         },
       }
     );
-
-    setMovies([response.data, ...movies]);
+    if (response.data.Response === "False") {
+      console.log("Movie not found");
+    } else {
+      setMovies([response.data, ...movies]);
+    }
   };
 
   return (
