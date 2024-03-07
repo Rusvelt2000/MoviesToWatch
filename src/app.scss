@@ -99,8 +99,11 @@ section {
       width: 48px;
       height: 48px;
       border-radius: 8px 0 0 8px;
-      opacity: .8;
+      opacity: .9;
+      background-color: rgba(255, 255, 255, .4);
+      // box-shadow: -2px 4px 8px 4px rgba(30, 30, 30, 0.7);
       right: 0;
+      backdrop-filter: blur(4px);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -117,7 +120,8 @@ section {
       }
     }
     .close {
-      background-color: $main-dark;
+      // background-color: $main-dark;
+      box-shadow: -2px 4px 8px 4px rgba(110, 5, 5, 0.42);
       top: 48px;
       transition: all .6s cubic-bezier(0.075, 0.82, 0.165, 1);
       &:hover {
@@ -128,7 +132,8 @@ section {
       }
     }
     .edit {
-      background-color: $accent-dark;
+      // background-color: $accent-dark;
+      box-shadow: -2px 4px 8px 4px rgba(17, 11, 84, .42);
       top: 102px;
       transition: all .6s cubic-bezier(0.075, 0.82, 0.165, 1) .05s;
       &:hover {
