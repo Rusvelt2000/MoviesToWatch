@@ -6,9 +6,9 @@ import defaultPoster from "../assets/default.jpeg";
 
 function MovieShow({ title, year, ratings, poster, genre, duration }) {
   const ratingSitesCount = ratings.map((rating) => {
-    if (rating != null) {
+    if (rating != null || rating.Value != NaN) {
       if (rating.Source.includes("Internet Movie Database")) {
-        return +rating.Value.substr(0, 2);
+        return +rating.Value.substr(0, 2).split(".").join("") * 10;
       } else if (
         rating.Source.includes("Rotten Tomatoes") ||
         rating.Source.includes("Metacritic")

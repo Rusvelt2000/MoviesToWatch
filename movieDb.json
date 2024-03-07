@@ -23,47 +23,43 @@
       "id": 1
     },
     {
-      "title": "Hulk",
-      "year": "2003",
+      "title": "13",
+      "year": "2010",
       "ratings": [
         {
           "Source": "Internet Movie Database",
-          "Value": "5.6/10"
+          "Value": "6.0/10"
         },
         {
           "Source": "Rotten Tomatoes",
-          "Value": "63%"
+          "Value": "07"
         },
         {
           "Source": "Metacritic",
-          "Value": "54/100"
+          "Value": "29/100"
         }
       ],
-      "poster": "https://m.media-amazon.com/images/M/MV5BMzQwZDg1MGEtN2E5My00ZDJlLWI4MzItM2U2MjJhYzlkNmEzXkEyXkFqcGdeQXVyNDAxNjkxNjQ@._V1_SX300.jpg",
-      "genre": "Action, Sci-Fi",
-      "runtime": "138 min",
+      "poster": "https://m.media-amazon.com/images/M/MV5BOWE4YWZjYWItY2U0NS00N2ZlLWFkOGEtY2M2N2E0NDA5MjBlXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg",
+      "genre": "Crime, Drama, Thriller",
+      "runtime": "91 min",
       "id": 2
     },
     {
-      "title": "The Matrix",
-      "year": "1999",
+      "title": "Breaking Bad",
+      "year": "2008–2013",
       "ratings": [
         {
           "Source": "Internet Movie Database",
-          "Value": "8.7/10"
+          "Value": "9.5/10"
         },
         {
           "Source": "Rotten Tomatoes",
-          "Value": "83%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "73/100"
+          "Value": "96%"
         }
       ],
-      "poster": "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
-      "genre": "Action, Sci-Fi",
-      "runtime": "136 min",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_SX300.jpg",
+      "genre": "Crime, Drama, Thriller",
+      "runtime": "49 min",
       "id": 3
     }
   ]
