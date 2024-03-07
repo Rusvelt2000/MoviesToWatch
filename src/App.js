@@ -1,26 +1,23 @@
 import "./app.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import SearchEngine from "./components/SearchEngine";
 import ListOfMovies from "./components/ListOfMovies";
 
 function App() {
   const [movies, setMovies] = useState([]);
+  const fetchMovies = async () => {
+    const response = await axios.get("http://localhost:3001/movies");
+    setMovies(response.data.sort((a, b) => b.id - a.id));
+  };
 
-  const handleSearchMovie = async (movieTitle) => {
-    const response = await axios.get(
-      "http://www.omdbapi.com/?apikey=4e918078&",
-      {
-        params: {
-          t: movieTitle,
-        },
-      }
-    );
-    if (response.data.Response === "False") {
-      console.log("Movie not found");
-    } else {
-      setMovies([response.data, ...movies]);
-    }
+  useEffect(() => {
+    fetchMovies();
+  }, []);
+
+  const addMovie = (movieObject) => {
+    axios.post("http://localhost:3001/movies", movieObject);
+    setMovies([movieObject, ...movies]);
   };
 
   return (
@@ -28,7 +25,7 @@ function App() {
       <section className="search">
         <div className="searchContainer container">
           <h1>My Watch List</h1>
-          <SearchEngine onSubmitMovie={handleSearchMovie} />
+          <SearchEngine onSubmitMovie={addMovie} />
         </div>
       </section>
       <section className="listOfMoviesContainer ">

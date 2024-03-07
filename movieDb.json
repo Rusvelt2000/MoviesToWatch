@@ -1,0 +1,70 @@
+{
+  "movies": [
+    {
+      "title": "The Avengers",
+      "year": "2012",
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "8.0/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "91%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "69/100"
+        }
+      ],
+      "poster": "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+      "genre": "Action, Sci-Fi",
+      "runtime": "143 min",
+      "id": 1
+    },
+    {
+      "title": "Hulk",
+      "year": "2003",
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "5.6/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "63%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "54/100"
+        }
+      ],
+      "poster": "https://m.media-amazon.com/images/M/MV5BMzQwZDg1MGEtN2E5My00ZDJlLWI4MzItM2U2MjJhYzlkNmEzXkEyXkFqcGdeQXVyNDAxNjkxNjQ@._V1_SX300.jpg",
+      "genre": "Action, Sci-Fi",
+      "runtime": "138 min",
+      "id": 2
+    },
+    {
+      "title": "The Matrix",
+      "year": "1999",
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "8.7/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "83%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "73/100"
+        }
+      ],
+      "poster": "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+      "genre": "Action, Sci-Fi",
+      "runtime": "136 min",
+      "id": 3
+    }
+  ]
+}

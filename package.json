@@ -15,6 +15,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "server": "json-server -p 3001 --watch movieDb.json --host 127.0.0.1",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

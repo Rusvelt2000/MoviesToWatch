@@ -11,6 +11,7 @@ html,
 body {
   padding: 0;
   margin: 0;
+  background-color: $accent-dark;
 }
 
 * {
@@ -77,7 +78,7 @@ section {
     }
   }
   img {
-    border-radius: 8px 8px 0 0 ;
+    border-radius: 8px 8px 0 0;
     width: 100%;
     overflow: hidden;
   }

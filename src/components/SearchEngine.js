@@ -1,13 +1,38 @@
 import "./search.scss";
+import axios from "axios";
 import { useState } from "react";
 
 function SearchEngine({ onSubmitMovie }) {
   const [movieTitle, setMovieTitle] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    onSubmitMovie(movieTitle);
-    setMovieTitle("");
+
+    const response = await axios.get(
+      `http://www.omdbapi.com/?apikey=4e918078&`,
+      {
+        params: {
+          t: movieTitle,
+        },
+      }
+    );
+    console.log(response.data);
+
+    if (response.data.Response === "False") {
+      console.log("Movie not found");
+    } else {
+      const newMovieObject = {
+        // id: response.data.imdbID,
+        title: response.data.Title,
+        year: response.data.Year,
+        ratings: response.data.Ratings,
+        poster: response.data.Poster,
+        genre: response.data.Genre,
+        runtime: response.data.Runtime,
+      };
+      onSubmitMovie(newMovieObject);
+      setMovieTitle("");
+    }
   };
 
   const handleChange = (event) => {
