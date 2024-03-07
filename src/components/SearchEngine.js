@@ -22,7 +22,7 @@ function SearchEngine({ onSubmitMovie }) {
       console.log("Movie not found");
     } else {
       const newMovieObject = {
-        // id: response.data.imdbID,
+        key: response.data.imdbID,
         title: response.data.Title,
         year: response.data.Year,
         ratings: response.data.Ratings,

@@ -69,6 +69,8 @@ section {
   width: 252px;
   height: fit-content;
   transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  
+  
   .info-flex {
     display: flex;
     gap: 32px;
@@ -77,10 +79,66 @@ section {
       max-width: 24px;
     }
   }
-  img {
+  .posterContainer {
+    position: relative;
     border-radius: 8px 8px 0 0;
-    width: 100%;
     overflow: hidden;
+    &:hover {
+      .close {
+        transform: translateX(0); 
+      }
+      .edit {
+        transform: translateX(0); 
+      }
+    }
+    img {
+      width: 100%;
+    }
+    .actions {
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      border-radius: 8px 0 0 8px;
+      opacity: .8;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transform: translateX(40px); 
+      transition: opacity .05s ease-in;
+      &:hover {
+        opacity: 1; 
+      }
+      .bin, .pen {
+        height: 20px;
+        width: auto;
+        transition: transform .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+    }
+    .close {
+      background-color: $main-dark;
+      top: 48px;
+      transition: all .6s cubic-bezier(0.075, 0.82, 0.165, 1);
+      &:hover {
+        background-color: $main;
+        .bin {
+          transform: scale(1.1);
+        }
+      }
+    }
+    .edit {
+      background-color: $accent-dark;
+      top: 102px;
+      transition: all .6s cubic-bezier(0.075, 0.82, 0.165, 1) .05s;
+      &:hover {
+        background-color: $accent;
+        .pen {
+          transform: scale(1.1);
+        }
+      }
+    }
+      
   }
   .caption {
     padding: 0 12px 8px;

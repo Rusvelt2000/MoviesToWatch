@@ -2,18 +2,22 @@ import "./search.scss";
 import imdbImg from "../assets/imdb.svg";
 import rottenImg from "../assets/rotten.svg";
 import metaImg from "../assets/meta.svg";
+import bin from "../assets/bin.svg";
+import edit from "../assets/edit.svg";
 import defaultPoster from "../assets/default.jpeg";
 
 function MovieShow({ title, year, ratings, poster, genre, duration }) {
   const ratingSitesCount = ratings.map((rating) => {
-    if (rating != null || rating.Value != NaN) {
+    if (rating != null) {
       if (rating.Source.includes("Internet Movie Database")) {
-        return +rating.Value.substr(0, 2).split(".").join("") * 10;
-      } else if (
-        rating.Source.includes("Rotten Tomatoes") ||
-        rating.Source.includes("Metacritic")
-      ) {
-        return +rating.Value.substr(0, 2);
+        const score = rating.Value.substr(0, rating.Value.indexOf("/")) * 10;
+        return score;
+      } else if (rating.Source.includes("Rotten Tomatoes")) {
+        const score = rating.Value.substring(0, rating.Value.indexOf("%"));
+        return score;
+      } else if (rating.Source.includes("Metacritic")) {
+        const score = rating.Value.substring(0, rating.Value.indexOf("/"));
+        return score;
       } else {
         return "-";
       }
@@ -28,17 +32,25 @@ function MovieShow({ title, year, ratings, poster, genre, duration }) {
 
   return (
     <div className="movieShow">
-      <img src={poster !== "N/A" ? poster : defaultPoster} alt={title} />
+      <div className="posterContainer">
+        <img src={poster !== "N/A" ? poster : defaultPoster} alt={title} />
+        <div className="close actions">
+          <img className="bin" src={bin} alt="Delete Movie" />
+        </div>
+        <div className="edit actions">
+          <img className="pen" src={edit} alt="Edit Movie" />
+        </div>
+      </div>
       <div className="caption">
         <h3>{title}</h3>
         <div>
           <small>Genre:</small>
-          <p className="year">{genre}</p>
+          <p>{genre}</p>
         </div>
         <div className="info-flex">
           <div>
             <small>Year:</small>
-            <p className="year">{year}</p>
+            <p>{year}</p>
           </div>
           <div>
             <small>Duration:</small>

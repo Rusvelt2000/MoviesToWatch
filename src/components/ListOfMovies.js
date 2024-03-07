@@ -4,7 +4,7 @@ function ListOfMovies({ movies }) {
   const renderedMovies = movies.map((movie) => {
     return (
       <MovieShow
-        key={movie.id}
+        key={movie.key}
         title={movie.title}
         year={movie.year}
         ratings={movie.ratings}
