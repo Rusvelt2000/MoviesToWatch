@@ -6,7 +6,16 @@ import bin from "../assets/bin.svg";
 import edit from "../assets/edit.svg";
 import defaultPoster from "../assets/default.jpeg";
 
-function MovieShow({ title, year, ratings, poster, genre, duration }) {
+function MovieShow({
+  title,
+  year,
+  ratings,
+  poster,
+  genre,
+  duration,
+  id,
+  onDelete,
+}) {
   const ratingSitesCount = ratings.map((rating) => {
     if (rating != null) {
       if (rating.Source.includes("Internet Movie Database")) {
@@ -25,6 +34,10 @@ function MovieShow({ title, year, ratings, poster, genre, duration }) {
     return "-";
   });
 
+  const handleDelete = () => {
+    onDelete(id);
+  };
+
   let avgRating = 0;
   for (let rating in ratingSitesCount) {
     avgRating += Math.round(ratingSitesCount[rating] / ratingSitesCount.length);
@@ -34,7 +47,7 @@ function MovieShow({ title, year, ratings, poster, genre, duration }) {
     <div className="movieShow">
       <div className="posterContainer">
         <img src={poster !== "N/A" ? poster : defaultPoster} alt={title} />
-        <div className="close actions">
+        <div className="close actions" onClick={handleDelete}>
           <img className="bin" src={bin} alt="Delete Movie" />
         </div>
         <div className="edit actions">

@@ -1,6 +1,7 @@
 import "./search.scss";
 import axios from "axios";
 import { useState } from "react";
+import search from "../assets/search.svg";
 
 function SearchEngine({ onSubmitMovie }) {
   const [movieTitle, setMovieTitle] = useState("");
@@ -16,7 +17,6 @@ function SearchEngine({ onSubmitMovie }) {
         },
       }
     );
-    console.log(response.data);
 
     if (response.data.Response === "False") {
       console.log("Movie not found");
@@ -29,6 +29,7 @@ function SearchEngine({ onSubmitMovie }) {
         poster: response.data.Poster,
         genre: response.data.Genre,
         runtime: response.data.Runtime,
+        id: response.data.imdbID,
       };
       onSubmitMovie(newMovieObject);
       setMovieTitle("");
@@ -41,14 +42,21 @@ function SearchEngine({ onSubmitMovie }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="Search">Search a movie</label>
-      <input
-        onChange={handleChange}
-        id="Search"
-        type="text"
-        value={movieTitle}
-      />
-      <button>Search</button>
+      <div className="searchContainer">
+        <label htmlFor="Search">Search a movie</label>
+        <div className="inputContainer">
+          <input
+            onChange={handleChange}
+            id="Search"
+            type="text"
+            value={movieTitle}
+          />
+          <button>
+            <img src={search} alt="Search" />
+            Search
+          </button>
+        </div>
+      </div>
     </form>
   );
 }

@@ -1,6 +1,6 @@
 import MovieShow from "./MovieShow";
 
-function ListOfMovies({ movies }) {
+function ListOfMovies({ movies, onDelete }) {
   const renderedMovies = movies.map((movie) => {
     return (
       <MovieShow
@@ -11,6 +11,8 @@ function ListOfMovies({ movies }) {
         poster={movie.poster}
         genre={movie.genre}
         duration={movie.runtime}
+        id={movie.id}
+        onDelete={onDelete}
       />
     );
   });

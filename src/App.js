@@ -20,6 +20,16 @@ function App() {
     setMovies([movieObject, ...movies]);
   };
 
+  const deleteMovie = async (id) => {
+    await axios.delete(`http://localhost:3001/movies/${id}`);
+
+    const updatedListOfMovies = movies.filter((movie) => {
+      return movie.id !== id;
+    });
+
+    setMovies(updatedListOfMovies);
+  };
+
   return (
     <div className="appContainer">
       <section className="search">
@@ -28,9 +38,9 @@ function App() {
           <SearchEngine onSubmitMovie={addMovie} />
         </div>
       </section>
-      <section className="listOfMoviesContainer ">
+      <section className="listOfMoviesContainer">
         <div className="container">
-          <ListOfMovies movies={movies} />
+          <ListOfMovies movies={movies} onDelete={deleteMovie} />
         </div>
       </section>
     </div>

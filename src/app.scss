@@ -1,11 +1,14 @@
 $text-color: #4d4d4d;
 $main-dark: #7a0000;
 $main: #bf121d;
+$main-light: #d84b54;
 $ternary: #fdefd3;
 $bg-color: #fafafa;
 $bg-alt: hsl(0, 11%, 93%);
 $accent-dark: #002e47;
 $accent: #679bbc;
+
+$bouncy: cubic-bezier(0.53, 0.72, 0.23, 1.19);
 
 html,
 body {
@@ -35,20 +38,56 @@ section {
     background: $bg-alt;
   }
 
-  h1 {
-    color: $main;
+  .searchContainer {
+    display: flex;
+    flex-direction: column;
   }
 
-  input {
-    width: 100%;
-    border-radius: 4px;
-    padding: 8px;
-    outline: 1px solid transparent;
-    border: 1px solid transparent;
-    &:focus {
-      border: 1px solid $accent;
-      outline: 1px solid $accent;
+  .inputContainer {
+    display: flex;
+    gap: 16px;
+    input {
+      width: 100%;
+      border-radius: 4px;
+      padding: 8px;
+      outline: 1px solid transparent;
+      border: 1px solid transparent;
+      &:focus {
+        border: 1px solid $accent;
+        outline: 1px solid $accent;
+      }
     }
+    button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: $main;
+      padding: 10px 24px 10px 20px;
+      color: $bg-color;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.1s ease-in;
+      &:hover {
+        background-color: $main-dark;
+      }
+      img {
+        width: 20px;
+      }
+    }
+  }
+  @media screen and (max-width: 540px) {
+    .inputContainer {
+      flex-direction: column;
+      button {
+        width: fit-content;
+      }
+    }
+  }
+
+  h1 {
+    color: $main;
   }
 }
 
@@ -68,9 +107,7 @@ section {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   width: 252px;
   height: fit-content;
-  transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-  
-  
+
   .info-flex {
     display: flex;
     gap: 32px;
@@ -85,10 +122,9 @@ section {
     overflow: hidden;
     &:hover {
       .close {
-        transform: translateX(0); 
-      }
-      .edit {
-        transform: translateX(0); 
+        transform: translateX(-4px);
+        background-color: $main;
+        box-shadow: -2px 4px 8px -2px rgba(110, 5, 5, 0.42);
       }
     }
     img {
@@ -96,54 +132,34 @@ section {
     }
     .actions {
       position: absolute;
-      width: 48px;
+      width: 56px;
       height: 48px;
-      border-radius: 8px 0 0 8px;
-      opacity: .9;
-      background-color: rgba(255, 255, 255, .4);
-      // box-shadow: -2px 4px 8px 4px rgba(30, 30, 30, 0.7);
-      right: 0;
-      backdrop-filter: blur(4px);
+      border-radius: 6px 0 0 6px;
+      background-color: rgba(255, 255, 255, 0.32);
+      box-shadow: -1px 2px 4px -2px rgba(30, 30, 30, 0.42);
+      right: -8px;
       display: flex;
       justify-content: center;
       align-items: center;
       cursor: pointer;
-      transform: translateX(40px); 
-      transition: opacity .05s ease-in;
+      transform: translateX(36px);
+      transition: width 0.2s $bouncy, transform 0.4s $bouncy,
+        opacity 0.05s ease-in, background-color 0.2s ease-in,
+        box-shadow 0.2s ease-in;
       &:hover {
-        opacity: 1; 
+        width: 64px;
       }
-      .bin, .pen {
+      .bin {
         height: 20px;
         width: auto;
-        transition: transform .4s cubic-bezier(0.075, 0.82, 0.165, 1);
       }
     }
     .close {
-      // background-color: $main-dark;
-      box-shadow: -2px 4px 8px 4px rgba(110, 5, 5, 0.42);
       top: 48px;
-      transition: all .6s cubic-bezier(0.075, 0.82, 0.165, 1);
       &:hover {
-        background-color: $main;
-        .bin {
-          transform: scale(1.1);
-        }
+        background-color: $main-dark;
       }
     }
-    .edit {
-      // background-color: $accent-dark;
-      box-shadow: -2px 4px 8px 4px rgba(17, 11, 84, .42);
-      top: 102px;
-      transition: all .6s cubic-bezier(0.075, 0.82, 0.165, 1) .05s;
-      &:hover {
-        background-color: $accent;
-        .pen {
-          transform: scale(1.1);
-        }
-      }
-    }
-      
   }
   .caption {
     padding: 0 12px 8px;
