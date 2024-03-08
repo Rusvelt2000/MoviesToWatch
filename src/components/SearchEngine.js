@@ -5,7 +5,6 @@ import search from "../assets/search.svg";
 
 function SearchEngine({ onSubmitMovie }) {
   const [movieTitle, setMovieTitle] = useState("");
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -29,7 +28,6 @@ function SearchEngine({ onSubmitMovie }) {
         poster: response.data.Poster,
         genre: response.data.Genre,
         runtime: response.data.Runtime,
-        id: response.data.imdbID,
       };
       onSubmitMovie(newMovieObject);
       setMovieTitle("");

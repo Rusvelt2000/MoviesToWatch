@@ -6,6 +6,7 @@ import ListOfMovies from "./components/ListOfMovies";
 
 function App() {
   const [movies, setMovies] = useState([]);
+
   const fetchMovies = async () => {
     const response = await axios.get("http://localhost:3001/movies");
     setMovies(response.data.sort((a, b) => b.id - a.id));
