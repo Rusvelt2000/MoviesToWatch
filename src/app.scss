@@ -35,17 +35,22 @@ section {
   background-color: $bg-color;
 
   .search {
-    background: $bg-alt;
+    background: $accent-dark;
   }
 
   .searchContainer {
     display: flex;
     flex-direction: column;
+    label {
+      color: $bg-color;
+      display: block;
+    }
   }
 
   .inputContainer {
     display: flex;
     gap: 16px;
+    
     input {
       width: 100%;
       border-radius: 4px;
@@ -87,12 +92,12 @@ section {
   }
 
   h1 {
-    color: $main;
+    color: $bg-color;
   }
 }
 
 .listOfMoviesContainer {
-  background-color: $accent-dark;
+  background-color: $bg-alt;
 }
 .listOfMovies {
   padding: 32px 0 48px;
@@ -102,7 +107,7 @@ section {
 }
 
 .movieShow {
-  background: $bg-alt;
+  background: $bg-color;
   border-radius: 8px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   width: 252px;
@@ -132,8 +137,8 @@ section {
     }
     .actions {
       position: absolute;
-      width: 56px;
-      height: 48px;
+      width: 58px;
+      height: 54px;
       border-radius: 6px 0 0 6px;
       background-color: rgba(255, 255, 255, 0.32);
       box-shadow: -1px 2px 4px -2px rgba(30, 30, 30, 0.42);
@@ -146,9 +151,6 @@ section {
       transition: width 0.2s $bouncy, transform 0.4s $bouncy,
         opacity 0.05s ease-in, background-color 0.2s ease-in,
         box-shadow 0.2s ease-in;
-      &:hover {
-        width: 64px;
-      }
       .bin {
         height: 20px;
         width: auto;

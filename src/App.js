@@ -16,9 +16,13 @@ function App() {
     fetchMovies();
   }, []);
 
-  const addMovie = (movieObject) => {
-    axios.post("http://localhost:3001/movies", movieObject);
-    setMovies([movieObject, ...movies]);
+  const addMovie = async (movieObject) => {
+    const newMovie = await axios.post(
+      "http://localhost:3001/movies",
+      movieObject
+    );
+
+    setMovies([newMovie.data, ...movies]);
   };
 
   const deleteMovie = async (id) => {

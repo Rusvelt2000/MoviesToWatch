@@ -1,26 +1,44 @@
 {
   "movies": [
     {
-      "key": "tt0449467",
-      "title": "Babel",
-      "year": "2006",
-      "ratings": [
+      "Title": "Oppenheimer",
+      "Year": "2023",
+      "Rated": "R",
+      "Released": "21 Jul 2023",
+      "Runtime": "180 min",
+      "Genre": "Biography, Drama, History",
+      "Director": "Christopher Nolan",
+      "Writer": "Christopher Nolan, Kai Bird, Martin Sherwin",
+      "Actors": "Cillian Murphy, Emily Blunt, Matt Damon",
+      "Plot": "The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.",
+      "Language": "English, German, Italian",
+      "Country": "United States, United Kingdom",
+      "Awards": "Nominated for 13 Oscars. 326 wins & 362 nominations total",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_SX300.jpg",
+      "Ratings": [
         {
           "Source": "Internet Movie Database",
-          "Value": "7.5/10"
+          "Value": "8.4/10"
         },
         {
           "Source": "Rotten Tomatoes",
-          "Value": "69%"
+          "Value": "93%"
         },
         {
           "Source": "Metacritic",
-          "Value": "69/100"
+          "Value": "88/100"
         }
       ],
-      "poster": "https://m.media-amazon.com/images/M/MV5BYTJkZDljNGYtNjRiNC00ZmY2LTg1NmItYTI1MTllNDQzMWVmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
-      "genre": "Drama",
-      "runtime": "143 min",
+      "Metascore": "88",
+      "imdbRating": "8.4",
+      "imdbVotes": "665,737",
+      "imdbID": "tt15398776",
+      "Type": "movie",
+      "DVD": "21 Nov 2023",
+      "BoxOffice": "$329,153,395",
+      "Production": "N/A",
+      "Website": "N/A",
+      "Response": "True",
       "id": 1
     }
   ]

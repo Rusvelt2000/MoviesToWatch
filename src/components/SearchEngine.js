@@ -20,16 +20,7 @@ function SearchEngine({ onSubmitMovie }) {
     if (response.data.Response === "False") {
       console.log("Movie not found");
     } else {
-      const newMovieObject = {
-        key: response.data.imdbID,
-        title: response.data.Title,
-        year: response.data.Year,
-        ratings: response.data.Ratings,
-        poster: response.data.Poster,
-        genre: response.data.Genre,
-        runtime: response.data.Runtime,
-      };
-      onSubmitMovie(newMovieObject);
+      onSubmitMovie(response.data);
       setMovieTitle("");
     }
   };
