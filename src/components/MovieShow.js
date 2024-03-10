@@ -1,4 +1,3 @@
-import "./search.scss";
 import imdbImg from "../assets/imdb.svg";
 import rottenImg from "../assets/rotten.svg";
 import metaImg from "../assets/meta.svg";

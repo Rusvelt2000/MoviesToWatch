@@ -45,6 +45,10 @@ section {
       color: $bg-color;
       display: block;
     }
+    small {
+      margin-top: 8px;
+      color: $main-light;
+    }
   }
 
   .inputContainer {

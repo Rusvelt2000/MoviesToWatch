@@ -1,10 +1,10 @@
-import "./search.scss";
 import axios from "axios";
 import { useState } from "react";
 import search from "../assets/search.svg";
 
 function SearchEngine({ onSubmitMovie }) {
   const [movieTitle, setMovieTitle] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -18,10 +18,12 @@ function SearchEngine({ onSubmitMovie }) {
     );
 
     if (response.data.Response === "False") {
-      console.log("Movie not found");
+      let error = `${movieTitle} is not on our database. Please try searching for an existing movie title.`;
+      setErrorMessage(error);
     } else {
       onSubmitMovie(response.data);
       setMovieTitle("");
+      setErrorMessage("");
     }
   };
 
@@ -45,6 +47,7 @@ function SearchEngine({ onSubmitMovie }) {
             Search
           </button>
         </div>
+        <small>{errorMessage}</small>
       </div>
     </form>
   );
