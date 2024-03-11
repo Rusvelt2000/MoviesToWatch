@@ -111,12 +111,11 @@ section {
   display: flex;
   flex-wrap: wrap;
   gap: 64px;
-
-  .moviePlaceholder {
-    width: 400px;
-    opacity: 0.1;
-    margin: 60px auto;
-  }
+}
+.moviePlaceholder {
+  width: 400px;
+  margin: 60px auto;
+  transition: all 0.2s ease-in;
 }
 
 .movieShow {
