@@ -26,7 +26,7 @@ function ListOfMovies({ movies, onDelete }) {
   );
 
   return (
-    <div className="listOfMovies">
+    <div className="listOfMovies" onClick={incrementCount}>
       {count}
       {renderedMovies.length > 0 ? renderedMovies : imgPlaceholder}
     </div>
