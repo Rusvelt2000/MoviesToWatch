@@ -16,10 +16,12 @@ function SearchEngine({ onSubmitMovie }) {
         },
       }
     );
-
-    if (response.data.Response === "False") {
-      let error = `${movieTitle} is not on our database. Please try searching for an existing movie title.`;
-      setErrorMessage(error);
+    if (movieTitle === "") {
+      setErrorMessage("Please enter a movie title.");
+    } else if (response.data.Response === "False") {
+      setErrorMessage(
+        `"${movieTitle}" was not found. Please try searching for an existing movie title.`
+      );
     } else {
       onSubmitMovie(response.data);
       setMovieTitle("");
@@ -34,6 +36,7 @@ function SearchEngine({ onSubmitMovie }) {
   return (
     <form onSubmit={handleSubmit}>
       <div className="searchContainer">
+        <h1>My Watch List</h1>
         <label htmlFor="Search">Search a movie</label>
         <div className="inputContainer">
           <input

@@ -38,8 +38,7 @@ function App() {
   return (
     <div className="appContainer">
       <section className="search">
-        <div className="searchContainer container">
-          <h1>My Watch List</h1>
+        <div className="container">
           <SearchEngine onSubmitMovie={addMovie} />
         </div>
       </section>

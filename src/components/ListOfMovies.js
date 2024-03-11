@@ -1,4 +1,5 @@
 import MovieShow from "./MovieShow";
+import emptyState from ".././assets/emptyState.svg";
 
 function ListOfMovies({ movies, onDelete }) {
   const renderedMovies = movies.map((movie) => {
@@ -17,7 +18,15 @@ function ListOfMovies({ movies, onDelete }) {
     );
   });
 
-  return <div className="listOfMovies">{renderedMovies}</div>;
+  let imgPlaceholder = (
+    <img className="moviePlaceholder" src={emptyState} alt="Add a movie" />
+  );
+
+  return (
+    <div className="listOfMovies">
+      {renderedMovies.length > 0 ? renderedMovies : imgPlaceholder}
+    </div>
+  );
 }
 
 export default ListOfMovies;
