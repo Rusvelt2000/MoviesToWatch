@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import MovieShow from "./MovieShow";
 import emptyState from ".././assets/emptyState.svg";
+import movieContext from "../context/movies";
 
 function ListOfMovies({ movies, onDelete }) {
+  const { count, incrementCount } = useContext(movieContext);
   const renderedMovies = movies.map((movie) => {
     return (
       <MovieShow
@@ -24,6 +27,7 @@ function ListOfMovies({ movies, onDelete }) {
 
   return (
     <div className="listOfMovies">
+      {count}
       {renderedMovies.length > 0 ? renderedMovies : imgPlaceholder}
     </div>
   );

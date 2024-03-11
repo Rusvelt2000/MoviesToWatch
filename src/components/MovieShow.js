@@ -88,10 +88,10 @@ function MovieShow({
           className="rating"
           style={
             avgRating <= 55
-              ? { backgroundColor: "#bf121d" }
+              ? { background: "linear-gradient(150deg, #ff4d59, #bf121d)" }
               : avgRating > 55 && avgRating < 75
-              ? { backgroundColor: "#f0ba26" }
-              : { backgroundColor: "#3fdd1e" }
+              ? { background: "linear-gradient(150deg, #ffd45d, #f0ba26)" }
+              : { background: "linear-gradient(150deg, #59ff38, #1ba300)" }
           }
         >
           {avgRating}
