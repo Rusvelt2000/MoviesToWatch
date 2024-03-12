@@ -2,6 +2,7 @@ import imdbImg from "../assets/imdb.svg";
 import rottenImg from "../assets/rotten.svg";
 import metaImg from "../assets/meta.svg";
 import bin from "../assets/bin.svg";
+import binLid from "../assets/binLid.svg";
 import edit from "../assets/edit.svg";
 import defaultPoster from "../assets/default.jpeg";
 
@@ -47,6 +48,7 @@ function MovieShow({
       <div className="posterContainer">
         <img src={poster !== "N/A" ? poster : defaultPoster} alt={title} />
         <div className="close actions" onClick={handleDelete}>
+          <img className="bin-lid" src={binLid} alt="Delete Movie" />
           <img className="bin" src={bin} alt="Delete Movie" />
         </div>
         <div className="edit actions">

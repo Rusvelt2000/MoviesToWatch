@@ -3,6 +3,7 @@ $main-dark: #7a0000;
 $main: #bf121d;
 $main-light: #d84b54;
 $ternary: #fdefd3;
+$white: #ffffff;
 $bg-color: #fafafa;
 $bg-alt: #efebeb;
 $accent-dark: #002e47;
@@ -10,6 +11,7 @@ $accent: #679bbc;
 $error-color: #ff4d59;
 
 $bouncy: cubic-bezier(0.53, 0.72, 0.23, 1.19);
+$extraBouncy: cubic-bezier(0, 0.62, 0.13, 1.82);
 
 html,
 body {
@@ -121,9 +123,32 @@ section {
 .movieShow {
   background: $bg-color;
   border-radius: 8px;
-  box-shadow: 0 4px 8px 0 rgba(44, 54, 109, 0.2);
+  box-shadow: 0 4px 8px -2px rgba(44, 54, 109, 0.2);
   width: 252px;
   height: fit-content;
+  transition: all 0.2s $bouncy;
+
+  &:hover {
+    background-color: $white;
+    transform: scale(1.02);
+    box-shadow: 2px 8px 24px -8px rgba(44, 54, 109, 0.2);
+    .posterContainer::after {
+      backdrop-filter: blur(2px) opacity(1);
+      background-color: rgba(255, 255, 255, 0.32);
+    }
+    .actions.close {
+      transform: translateX(-8px);
+      background-color: $main;
+      box-shadow: -2px 4px 8px -2px rgba(241, 35, 35, 0.22);
+    }
+    .bin {
+      transform: translateY(1px) rotate(-6deg);
+    }
+    .bin-lid {
+      transform: rotate(12deg);
+      margin-left: 2px;
+    }
+  }
 
   .info-flex {
     display: flex;
@@ -137,42 +162,59 @@ section {
     position: relative;
     border-radius: 8px 8px 0 0;
     overflow: hidden;
-    &:hover {
-      .close {
-        transform: translateX(-4px);
-        background-color: $main;
-        box-shadow: -2px 4px 8px -2px rgba(110, 5, 5, 0.42);
-      }
+    user-select: none;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba(255, 255, 255, 0);
+      backdrop-filter: blur(0px) opacity(0);
+      transition: all 0.25s $bouncy;
     }
     img {
       width: 100%;
+      position: relative;
     }
     .actions {
       position: absolute;
-      width: 58px;
-      height: 54px;
+      width: 70px;
+      height: 64px;
       border-radius: 6px 0 0 6px;
       background-color: rgba(255, 255, 255, 0.32);
       box-shadow: -1px 2px 4px -2px rgba(30, 30, 30, 0.42);
-      right: -8px;
+      right: -12px;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      gap: 2px;
+      z-index: 1;
       cursor: pointer;
-      transform: translateX(36px);
-      transition: width 0.2s $bouncy, transform 0.4s $bouncy,
-        opacity 0.05s ease-in, background-color 0.2s ease-in,
-        box-shadow 0.2s ease-in;
+      transform: translateX(46px);
+      transition: width 0.2s $bouncy, transform 0.3s $bouncy 0.1s,
+        opacity 0.1s ease-in 0.2s, background-color 0.2s ease-in 0.1s,
+        box-shadow 0.2s ease-in 0.2s;
+      &:hover {
+        box-shadow: -1px 2px 4px -2px rgba(136, 22, 22, 0.42);
+        background-color: $main-dark;
+      }
       .bin {
-        height: 20px;
-        width: auto;
+        width: 20px;
+        height: auto;
+        transition: transform 0.4s $extraBouncy 0.25s;
+      }
+      .bin-lid {
+        width: 26px;
+        height: auto;
+        transform-origin: right bottom;
+        transition: transform 0.4s $extraBouncy 0.25s;
       }
     }
     .close {
-      top: 48px;
-      &:hover {
-        background-color: $main-dark;
-      }
+      top: 64px;
     }
   }
   .caption {
@@ -183,7 +225,7 @@ section {
       color: $accent-dark;
     }
     h3 {
-      margin: 8px 0 4px;
+      margin: 2px 0 4px;
       font-size: 20px;
     }
     p {

@@ -151,6 +151,80 @@
       "Website": "N/A",
       "Response": "True",
       "id": 4
+    },
+    {
+      "Title": "My Sassy Girl",
+      "Year": "2001",
+      "Rated": "Not Rated",
+      "Released": "27 Jul 2001",
+      "Runtime": "137 min",
+      "Genre": "Comedy, Drama, Romance",
+      "Director": "Jae-young Kwak",
+      "Writer": "Ho-sik Kim, Jae-young Kwak",
+      "Actors": "Cha Tae-hyun, Jun Ji-hyun, In-mun Kim",
+      "Plot": "A young man sees a drunk, cute woman standing too close to the tracks at a metro station in Seoul and pulls her back. She ends up getting him into trouble repeatedly after that, starting on the train.",
+      "Language": "Korean, English",
+      "Country": "South Korea",
+      "Awards": "9 wins & 5 nominations",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BYzg2NDU2MWQtZmVlYy00YzY0LTg2ZGEtYjI5MDIzNGVjOWEyXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_SX300.jpg",
+      "Ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "8.0/10"
+        }
+      ],
+      "Metascore": "N/A",
+      "imdbRating": "8.0",
+      "imdbVotes": "50,203",
+      "imdbID": "tt0293715",
+      "Type": "movie",
+      "DVD": "15 Dec 2014",
+      "BoxOffice": "N/A",
+      "Production": "N/A",
+      "Website": "N/A",
+      "Response": "True",
+      "id": 5
+    },
+    {
+      "Title": "Mulholland Drive",
+      "Year": "2001",
+      "Rated": "R",
+      "Released": "19 Oct 2001",
+      "Runtime": "147 min",
+      "Genre": "Drama, Mystery, Thriller",
+      "Director": "David Lynch",
+      "Writer": "David Lynch",
+      "Actors": "Naomi Watts, Laura Harring, Justin Theroux",
+      "Plot": "After a car wreck on the winding Mulholland Drive renders a woman amnesiac, she and a perky Hollywood-hopeful search for clues and answers across Los Angeles in a twisting venture beyond dreams and reality.",
+      "Language": "English, Spanish, French",
+      "Country": "France, United States",
+      "Awards": "Nominated for 1 Oscar. 49 wins & 61 nominations total",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BYTRiMzg4NDItNTc3Zi00NjBjLTgwOWYtOGZjMTFmNGU4ODY4XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
+      "Ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "7.9/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "84%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "86/100"
+        }
+      ],
+      "Metascore": "86",
+      "imdbRating": "7.9",
+      "imdbVotes": "380,460",
+      "imdbID": "tt0166924",
+      "Type": "movie",
+      "DVD": "18 Oct 2016",
+      "BoxOffice": "$7,220,243",
+      "Production": "N/A",
+      "Website": "N/A",
+      "Response": "True",
+      "id": 6
     }
   ]
 }

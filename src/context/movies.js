@@ -3,20 +3,9 @@ import { createContext, useState } from "react";
 const MovieContext = createContext();
 
 function Provider({ children }) {
-  const [count, setCount] = useState(0);
+  const valueToShare = {};
 
-  const valueToShare = {
-    count,
-    incrementCount: () => {
-      setCount(count + 1);
-    },
-  };
-
-  return (
-    <MovieContext.Provider value={valueToShare}>
-      {children}
-    </MovieContext.Provider>
-  );
+  return <MovieContext.Provider value={{}}>{children}</MovieContext.Provider>;
 }
 
 export { Provider };
