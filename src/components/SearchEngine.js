@@ -1,8 +1,10 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import search from "../assets/search.svg";
+import MovieContext from "../context/movies";
 
-function SearchEngine({ onSubmitMovie }) {
+function SearchEngine() {
+  const { addMovie } = useContext(MovieContext);
   const [movieTitle, setMovieTitle] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const handleSubmit = async (event) => {
@@ -23,7 +25,7 @@ function SearchEngine({ onSubmitMovie }) {
         `"${movieTitle}" was not found. Please try searching for an existing movie title.`
       );
     } else {
-      onSubmitMovie(response.data);
+      addMovie(response.data);
       setMovieTitle("");
       setErrorMessage("");
     }

@@ -1,50 +1,26 @@
 import "./app.scss";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useContext, useEffect } from "react";
 import SearchEngine from "./components/SearchEngine";
 import ListOfMovies from "./components/ListOfMovies";
+import MovieContext from "./context/movies";
 
 function App() {
-  const [movies, setMovies] = useState([]);
-
-  const fetchMovies = async () => {
-    const response = await axios.get("http://localhost:3001/movies");
-    setMovies(response.data.sort((a, b) => b.id - a.id));
-  };
+  const { fetchMovies } = useContext(MovieContext);
 
   useEffect(() => {
     fetchMovies();
   }, []);
 
-  const addMovie = async (movieObject) => {
-    const newMovie = await axios.post(
-      "http://localhost:3001/movies",
-      movieObject
-    );
-
-    setMovies([newMovie.data, ...movies]);
-  };
-
-  const deleteMovie = async (id) => {
-    await axios.delete(`http://localhost:3001/movies/${id}`);
-
-    const updatedListOfMovies = movies.filter((movie) => {
-      return movie.id !== id;
-    });
-
-    setMovies(updatedListOfMovies);
-  };
-
   return (
     <div className="appContainer">
       <section className="search">
         <div className="container">
-          <SearchEngine onSubmitMovie={addMovie} />
+          <SearchEngine />
         </div>
       </section>
       <section className="listOfMoviesContainer">
         <div className="container">
-          <ListOfMovies movies={movies} onDelete={deleteMovie} />
+          <ListOfMovies />
         </div>
       </section>
     </div>

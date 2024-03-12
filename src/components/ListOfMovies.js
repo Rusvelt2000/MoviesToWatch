@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import MovieShow from "./MovieShow";
 import emptyState from ".././assets/emptyState.svg";
+import MovieContext from "../context/movies";
 
-function ListOfMovies({ movies, onDelete }) {
+function ListOfMovies() {
+  const { movies } = useContext(MovieContext);
   const renderedMovies = movies.map((movie) => {
     return (
       <MovieShow
@@ -13,7 +16,6 @@ function ListOfMovies({ movies, onDelete }) {
         genre={movie.Genre}
         duration={movie.Runtime}
         id={movie.id}
-        onDelete={onDelete}
       />
     );
   });

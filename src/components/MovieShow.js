@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import imdbImg from "../assets/imdb.svg";
 import rottenImg from "../assets/rotten.svg";
 import metaImg from "../assets/meta.svg";
@@ -5,17 +6,10 @@ import bin from "../assets/bin.svg";
 import binLid from "../assets/binLid.svg";
 import edit from "../assets/edit.svg";
 import defaultPoster from "../assets/default.jpeg";
+import MovieContext from "../context/movies";
 
-function MovieShow({
-  title,
-  year,
-  ratings,
-  poster,
-  genre,
-  duration,
-  id,
-  onDelete,
-}) {
+function MovieShow({ title, year, ratings, poster, genre, duration, id }) {
+  const { deleteMovie } = useContext(MovieContext);
   const ratingSitesCount = ratings.map((rating) => {
     if (rating != null) {
       if (rating.Source.includes("Internet Movie Database")) {
@@ -35,7 +29,7 @@ function MovieShow({
   });
 
   const handleDelete = () => {
-    onDelete(id);
+    deleteMovie(id);
   };
 
   let avgRating = 0;
