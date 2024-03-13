@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useCallback } from "react";
 import axios from "axios";
 
 const MovieContext = createContext();
@@ -6,10 +6,10 @@ const MovieContext = createContext();
 function Provider({ children }) {
   const [movies, setMovies] = useState([]);
 
-  const fetchMovies = async () => {
+  const fetchMovies = useCallback(async () => {
     const response = await axios.get("http://localhost:3001/movies");
     setMovies(response.data.sort((a, b) => b.id - a.id));
-  };
+  }, []);
 
   const addMovie = async (movieObject) => {
     const newMovie = await axios.post(
