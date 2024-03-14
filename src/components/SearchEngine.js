@@ -1,14 +1,39 @@
 import axios from "axios";
-import { useState, useContext } from "react";
-import search from "../assets/search.svg";
+import { useState, useContext, useCallback, useEffect } from "react";
 import MovieContext from "../context/movies";
 import MoviesDropdown from "./MoviesDropdown";
+import search from "../assets/search.svg";
 
 function SearchEngine() {
   const { addMovie } = useContext(MovieContext);
   const [movieTitle, setMovieTitle] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [renderedMovies, setRenderedMovies] = useState([]);
+
+  const closeSearchDropdown = useCallback(() => {
+    setRenderedMovies([]);
+  }, []);
+
+  const clearSearch = useCallback(() => {
+    setMovieTitle("");
+    setErrorMessage("");
+    setRenderedMovies([]);
+  }, []);
+
+  useEffect(() => {
+    document.body.addEventListener("click", closeSearchDropdown);
+  }, [closeSearchDropdown]);
+
+  useEffect(() => {
+    document
+      .getElementById("Search")
+      .addEventListener("keydown", function (event) {
+        event.stopPropagation();
+        if (event.key === "Escape") {
+          clearSearch();
+        }
+      });
+  }, [clearSearch]);
 
   const searchMovie = async (query) => {
     const response = await axios.get(
@@ -19,15 +44,17 @@ function SearchEngine() {
         },
       }
     );
+
     if (response.data.Response === "True") {
       const renderedMovies = response.data.Search.map((movie) => {
-        console.log(movie);
         return (
           <MoviesDropdown
             poster={movie.Poster}
             title={movie.Title}
             year={movie.Year}
+            type={movie.Type}
             key={movie.imdbID}
+            onMovieSubmit={handleDropdownItemClick}
           />
         );
       });
@@ -35,27 +62,33 @@ function SearchEngine() {
     }
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
+    getMovieObject(movieTitle);
+  };
 
+  const handleDropdownItemClick = (title) => {
+    getMovieObject(title);
+  };
+
+  const getMovieObject = async (title) => {
     const response = await axios.get(
       `http://www.omdbapi.com/?apikey=4e918078&`,
       {
         params: {
-          t: movieTitle,
+          t: title,
         },
       }
     );
-    if (movieTitle === "") {
+    if (title === "") {
       setErrorMessage("Please enter a movie title.");
     } else if (response.data.Response === "False") {
       setErrorMessage(
-        `"${movieTitle}" was not found. Please try searching for an existing movie title.`
+        `"${title}" was not found. Please try searching for an existing movie title.`
       );
     } else {
       addMovie(response.data);
-      setMovieTitle("");
-      setErrorMessage("");
+      clearSearch();
     }
   };
 
@@ -72,18 +105,20 @@ function SearchEngine() {
           <label htmlFor="Search">Search a movie</label>
           <div className="inputContainer">
             <div className="inputDropdownWrapper">
-              <input
-                onChange={handleChange}
-                id="Search"
-                type="text"
-                value={movieTitle}
-              />
+              <div className="inputImageWrapper">
+                <input
+                  onChange={handleChange}
+                  id="Search"
+                  type="text"
+                  value={movieTitle}
+                  placeholder="Search for a movie or series"
+                />
+                <div className="searchIconWrapper" onClick={handleSubmit}>
+                  <img src={search} alt="Search" />
+                </div>
+              </div>
               <ul className="MoviesDropdown">{renderedMovies}</ul>
             </div>
-            <button>
-              <img src={search} alt="Search" />
-              Search
-            </button>
           </div>
           <small>{errorMessage}</small>
         </div>

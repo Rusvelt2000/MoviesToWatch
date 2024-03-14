@@ -227,8 +227,86 @@
       "id": 6
     },
     {
-      "Babel": "",
+      "Title": "Les Misérables",
+      "Year": "2012",
+      "Rated": "PG-13",
+      "Released": "25 Dec 2012",
+      "Runtime": "158 min",
+      "Genre": "Drama, Musical, Romance",
+      "Director": "Tom Hooper",
+      "Writer": "William Nicholson, Alain Boublil, Claude-Michel Schönberg",
+      "Actors": "Hugh Jackman, Russell Crowe, Anne Hathaway",
+      "Plot": "In 19th-century France, Jean Valjean, who for decades has been hunted by the ruthless policeman Javert after breaking parole, agrees to care for a factory worker's daughter. The decision changes their lives forever.",
+      "Language": "English",
+      "Country": "United Kingdom, United States",
+      "Awards": "Won 3 Oscars. 85 wins & 177 nominations total",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNWZhNGM1ZTItYTg4Zi00MTE2LTg5MjYtYjdmYmZkNTVmYTQwXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+      "Ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "7.5/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "70%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "63/100"
+        }
+      ],
+      "Metascore": "63",
+      "imdbRating": "7.5",
+      "imdbVotes": "343,839",
+      "imdbID": "tt1707386",
+      "Type": "movie",
+      "DVD": "02 Sep 2014",
+      "BoxOffice": "$148,809,770",
+      "Production": "N/A",
+      "Website": "N/A",
+      "Response": "True",
       "id": 7
+    },
+    {
+      "Title": "The Irishman",
+      "Year": "2019",
+      "Rated": "R",
+      "Released": "27 Nov 2019",
+      "Runtime": "209 min",
+      "Genre": "Biography, Crime, Drama",
+      "Director": "Martin Scorsese",
+      "Writer": "Steven Zaillian, Charles Brandt",
+      "Actors": "Robert De Niro, Al Pacino, Joe Pesci",
+      "Plot": "An illustration of Frank Sheeran's life, from W.W.II veteran to hit-man for the Bufalino crime family and his alleged assassination of his close friend Jimmy Hoffa.",
+      "Language": "English, Italian, Latin, Spanish, German",
+      "Country": "United States",
+      "Awards": "Nominated for 10 Oscars. 73 wins & 357 nominations total",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMGUyM2ZiZmUtMWY0OC00NTQ4LThkOGUtNjY2NjkzMDJiMWMwXkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_SX300.jpg",
+      "Ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "7.8/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "95%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "94/100"
+        }
+      ],
+      "Metascore": "94",
+      "imdbRating": "7.8",
+      "imdbVotes": "425,445",
+      "imdbID": "tt1302006",
+      "Type": "movie",
+      "DVD": "27 Nov 2019",
+      "BoxOffice": "N/A",
+      "Production": "N/A",
+      "Website": "N/A",
+      "Response": "True",
+      "id": 8
     }
   ]
 }

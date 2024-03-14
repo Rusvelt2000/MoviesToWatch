@@ -1,21 +1,17 @@
-import { useContext } from "react";
 import defaultPoster from "../assets/default.jpeg";
-import MovieContext from "../context/movies";
 
-function MoviesDropdown({ title, poster, year }) {
+function MoviesDropdown({ title, poster, year, type, onMovieSubmit }) {
   const handleClick = () => {
-    addMovie(title);
+    onMovieSubmit(title);
   };
-
-  const { addMovie } = useContext(MovieContext);
   return (
-    <li className="movieDropdownItem" onClick={handleClick}>
+    <li onClick={handleClick}>
       <img src={poster !== "N/A" ? poster : defaultPoster} alt={title} />
       <div>
-        <p>
-          <strong>{title}</strong>
-        </p>
-        <small>{year}</small>
+        <p>{title}</p>
+        <small>
+          {type} - {year}
+        </small>
       </div>
     </li>
   );

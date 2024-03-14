@@ -10,6 +10,7 @@ import MovieContext from "../context/movies";
 
 function MovieShow({ title, year, ratings, poster, genre, duration, id }) {
   const { deleteMovie } = useContext(MovieContext);
+
   const ratingSitesCount = ratings.map((rating) => {
     if (rating != null) {
       if (rating.Source.includes("Internet Movie Database")) {
