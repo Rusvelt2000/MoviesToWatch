@@ -49,10 +49,7 @@ section {
       color: $bg-color;
       font-size: 32px;
     }
-    label {
-      color: $bg-color;
-      display: block;
-    }
+
     small {
       margin-top: 8px;
       color: $error-color;
@@ -98,7 +95,7 @@ section {
           outline: 1px solid transparent;
           border: 1px solid transparent;
           font-size: 16px;
-          font-weight: 500;
+          font-weight: 400;
           &:focus {
             border: 0.5px solid $text-color-light;
             outline: 0.5px solid $text-color-light;
@@ -203,7 +200,7 @@ section {
 
   .info-flex {
     display: flex;
-    gap: 32px;
+    gap: 40px;
     img {
       margin-top: 8px;
       max-width: 24px;

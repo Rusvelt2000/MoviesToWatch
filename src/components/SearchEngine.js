@@ -102,7 +102,6 @@ function SearchEngine() {
       <form onSubmit={handleSubmit}>
         <div className="searchContainer">
           <h1>My Watch List</h1>
-          <label htmlFor="Search">Search a movie</label>
           <div className="inputContainer">
             <div className="inputDropdownWrapper">
               <div className="inputImageWrapper">
