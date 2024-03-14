@@ -141,14 +141,13 @@ section {
       }
     }
   }
+}
+@media screen and (max-width: 540px) {
+  .inputContainer {
+    flex-direction: column;
 
-  @media screen and (max-width: 540px) {
-    .inputContainer {
-      flex-direction: column;
-
-      button {
-        width: fit-content;
-      }
+    button {
+      width: fit-content;
     }
   }
 }
